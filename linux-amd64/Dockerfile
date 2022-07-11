@@ -10,5 +10,4 @@ ENV CC=gcc
 RUN apt update \
  && apt install -y --no-install-recommends \
         pkg-config \
-        libicu-dev:amd64 \
  && rm -rf /var/lib/apt/lists/*

@@ -15,5 +15,4 @@ RUN dpkg --add-architecture arm64 \
         pkg-config \
         gcc-aarch64-linux-gnu \
         libc6-dev-arm64-cross \
-        libicu-dev:arm64 \
  && rm -rf /var/lib/apt/lists/*
