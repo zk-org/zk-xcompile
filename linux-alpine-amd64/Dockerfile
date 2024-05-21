@@ -6,5 +6,5 @@ ENV GOOS=linux
 ENV GOARCH=amd64
 ENV CGO_ENABLED=1
 
-RUN apk add --no-cache gcc musl-dev bash make clang lld
+RUN apk add --no-cache git gcc musl-dev bash make clang lld
 
