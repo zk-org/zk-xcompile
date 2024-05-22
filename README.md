@@ -57,6 +57,6 @@ or via the push script
 
 ```sh
 ./push # pushes all images to zk-org ghcr
-./push ./linux-amd64 ./linux-alpine-amd64 # push desired images only
+./push ./linux-amd64 ./alpine-amd64 # push desired images only
 
 ```
