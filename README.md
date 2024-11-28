@@ -1,6 +1,7 @@
 # Cross-compiling [`zk`](https://github.com/zk-org/zk) with Docker
 
 Largely inspired by [dh1tw](https://dh1tw.de/2019/12/cross-compiling-golang-cgo-projects/) and [remoteAudio-xcompile](https://github.com/dh1tw/remoteAudio-xcompile).
+Images are when changes are pushed to the main branch using Actions.
 
 ## How to invoke?
 
@@ -19,44 +20,10 @@ The images are hosted with [ghcr within zk-org](https://github.com/orgs/zk-org/p
 ## Releasing changes
 
 Clone this repo, make necessary changes, submit a PR. 
-After PR is confirmed, proceed with building and pushing.
 
-### Building
+### Manual building
 
 ```sh
 docker buildx build -t ghcr.io/zk-org/zk-xcompile:linux-amd64 ./linux-amd64
-docker push ghcr.io/zk-org/zk-xcompile:linux-amd64
 ```
 
-or via the `build` script
-
-```sh
-./build # builds all images
-./build ./linux-amd64 ./linux-arm64 # build desired images only
-```
-
-### Pushing
-
-Logout of docker if you're currently logged in: `docker logout` or via Docker Desktop.
-
-Then login to `ghcr.io` with your personal access token. Only members of `zk-org` can push. Docs are [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic).
-
-For example:
-
-```sh
-echo $ZK-TOKEN | docker login ghcr.io -u USERNAME --password-stdin
-```
-
-Then you can push to our container registry.
-
-```sh
-docker push ghcr.io/zk-org/zk-xcompile:linux-amd64
-```
-
-or via the push script
-
-```sh
-./push # pushes all images to zk-org ghcr
-./push ./linux-amd64 ./alpine-amd64 # push desired images only
-
-```

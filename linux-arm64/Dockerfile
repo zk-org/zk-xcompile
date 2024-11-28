@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 golang:1.21
+FROM --platform=linux/arm64 golang:1.23
 LABEL os=linux
 LABEL arch=arm64
 
