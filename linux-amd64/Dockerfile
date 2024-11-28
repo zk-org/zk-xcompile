@@ -8,7 +8,7 @@ ENV CGO_ENABLED=1
 ENV CC=gcc
 
 RUN apt-get update \
-&& apt-get upgrade \
+&& apt-get upgrade -y \
 && apt-get install -y --no-install-recommends pkg-config \
 && rm -rf /var/lib/apt/lists/*
 
