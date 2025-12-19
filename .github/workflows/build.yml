@@ -1,4 +1,4 @@
-name: build
+name: build and push to registry
 
 on: [push, workflow_dispatch]
 
@@ -36,6 +36,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v6
         with:
+          push: true
           context: "{{defaultContext}}:${{ matrix.tag }}"
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tag }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -70,6 +71,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v6
         with:
+          push: true
           context: "{{defaultContext}}:${{ matrix.tag }}"
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tag }}
           labels: ${{ steps.meta.outputs.labels }}
