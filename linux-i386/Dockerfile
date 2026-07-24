@@ -1,4 +1,4 @@
-FROM --platform=linux/386 golang:1.24
+FROM --platform=linux/386 golang:1.26
 LABEL os=linux
 LABEL arch=i386
 
